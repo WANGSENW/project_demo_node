@@ -41,7 +41,7 @@ app.use(expressJWT({
 /**
  * 是一个日志中间件
  */
-app.use((req, res, next) => log(req, res, next))
+// app.use((req, res, next) => log(req, res, next))
 
 app.use('/', indexRouter);
 app.use('/api/login', loginRouter)
@@ -51,9 +51,9 @@ app.use('/api/user', usersRouter);
  * 是一个login的中间件
  */
 
-app.use('/api/login', (req, res, next) => {
-  console.log('是一个login的中间件')
-})
+// app.use('/api/login', (req, res, next) => {
+//   console.log('是一个login的中间件')
+// })
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

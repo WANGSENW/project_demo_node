@@ -2,11 +2,11 @@ let dbOption
  
 dbOption = {
     connectionLimit: 10,
-    host: '1',
+    host: '81.70.229.157',
     user: 'root',
-    password: 'root',
+    password: 'shuoshuo123ABC!',
     port: '3306',
-    database:'user_center'
+    database:'test'
 }
 
 module.exports=dbOption
