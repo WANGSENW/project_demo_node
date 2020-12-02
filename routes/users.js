@@ -14,7 +14,7 @@ router.get('/list', async (req, res, next)=> {
     let response = await querySql(sql)
     res.send({ msg: "查询成功", code: 200, data: response })
   } catch (e) {
-    next(e)
+    next(e)  
     res.send({msg:"查询失败",code:501,data:response})
   }
 })

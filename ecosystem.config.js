@@ -1,3 +1,5 @@
+const { USER,HOST,REF,REPO,PATH } = require('./utils/automation')
+
 module.exports = {
   apps : [{
     name: 'app',
@@ -20,4 +22,20 @@ module.exports = {
       NODE_ENV: 'production'
     }
   }],
+  deploy : {
+    production : {
+      user : USER,
+      host :HOST,
+      ref: REF,
+      // 远程仓库地址
+      repo: REPO,
+      // 指定代码拉取到服务器的⽬录
+      path: PATH,
+      ssh_options: "StrictHostKeyChecking=no",
+      'post-deploy' : 'npm install && pm2 reload ecosystem.config.js --envproduction',
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
+  }
 };
