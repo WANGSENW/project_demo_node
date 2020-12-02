@@ -32,7 +32,7 @@ module.exports = {
       // 指定代码拉取到服务器的⽬录
       path: PATH,
       ssh_options: "StrictHostKeyChecking=no",
-      'post-deploy' : 'npm install && pm2 reload ecosystem.config.js --envproduction',
+      'post-deploy' : 'npm install && pm2 reload ecosystem.config.js --env production',
       "env": {
         "NODE_ENV": "production"
       }
