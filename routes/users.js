@@ -2,6 +2,18 @@ var express = require('express');
 var router = express.Router();
 const querySql = require('../db/index')
 
+/* 查询用户接口 get */
+router.get('/listUser', async (req, res, next)=> {
+  try {
+    let sql = `select * from app_user`
+    let response = await querySql(sql)
+    res.send({ msg: "查询成功", code: 200, data: response })
+  } catch (e) {
+    next(e)  
+    res.send({msg:"查询失败",code:501,data:response})
+  }
+})
+
 /* 查询接口 get */
 router.get('/list', async (req, res, next)=> {
   const { pageSize, pageNo, shop_name } = req.query
