@@ -49,4 +49,13 @@ router.post('/listPost', async(req, res, next)=> {
   }
 })
 
+router.get('/listTest', async (req, res, next) => {
+  try {
+    res.send({ msg: "查询成功", code: 200})
+  } catch (e) {
+    next(e)
+    res.send({msg:"查询失败",code:501})
+  }
+})
+
 module.exports = router;
